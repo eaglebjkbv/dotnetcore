@@ -1,0 +1,2 @@
+# dotnetcore
+Some Dotnetcore practices
