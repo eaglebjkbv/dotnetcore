@@ -4,6 +4,7 @@ dotnet add package Microsoft.EntityFramework
 ## Entity Framwrok Komutları : 
 ## Entity Framework tool kurulumu
 dotnet tool install --global dotnet-ef
+
 ## Design Paketi kurulumu :
 dotnet add package Microsoft.EntityFrameworkCore.Design
 
