@@ -16,7 +16,7 @@ namespace WebApiMongo.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Kitap>> Get()=>
+         public ActionResult<List<Kitap>> Get()=>
             _kitapService.Get();
         [HttpGet("{id:length(24)}",Name="GetKitap")]
         public ActionResult<Kitap> Get(string id)
@@ -28,6 +28,7 @@ namespace WebApiMongo.Controllers
             }
             return kitap;
         }
+        
         [HttpPost]
         public ActionResult<Kitap> Create(Kitap kitap)
         {
