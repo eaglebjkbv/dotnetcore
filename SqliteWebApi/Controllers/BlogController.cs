@@ -32,34 +32,36 @@ namespace SqliteWebApi.Controllers
         //     }
         //     return NotFound();
         // }
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}", Name = "Get")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<Blog> GetBlog(int id){
-            
-            try
-            {
-               var result=_context.Blogs.Single(b=>b.BlogId==id); 
-               return Ok(result);
-            }
-            catch (System.Exception)
-            {
-                return NotFound();
-                //throw;
-            }
-            
-            
-                
-            
-            
-            
-        }
-        [HttpPost]
-        public string PostBlogs(Blog blog)
+        public ActionResult<Blog> Get(int id)
         {
-            _context.Add(blog);
+            var result=_context.Blogs.Find(id);
+            if(result==null){
+                return NotFound();
+            }
+            return result;
+            // try
+            // {
+            //     var result = _context.Blogs.Single(b => b.BlogId == id);
+            //     return Ok(result);
+            // }
+            // catch (System.Exception)
+            // {
+            //     return NotFound();
+            //     //throw;
+            }
+        
+        [HttpPost]
+        public ActionResult<Blog> PostBlogs(Blog blog)
+        {
+            _context.Blogs.Add(blog);
             _context.SaveChanges();
-            return "ok";
+            
+            // return CreatedAtAction(nameof(GetBlog),new Blog{BlogId=blog.BlogId},blog);
+            //return "ok";
+            return CreatedAtAction("Get","Blog",new {id=blog.BlogId},blog);
         }
         
     }
