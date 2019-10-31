@@ -1,3 +1,4 @@
+# SQLite kullanan bir web api tasarımı  
 ## Eklenen Paketler :
 dotnet add package Microsoft.EntityFramework.Sqlite
 
