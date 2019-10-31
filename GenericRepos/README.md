@@ -1,6 +1,6 @@
 # Generic Repository Pattern Kullanımına örnek bir proje 
-##Boş Solution oluşturmak
 
+## Boş Solution oluşturmak
 dotnet new sln -o GenericRepos 
 
 ## klasöre Giriş :
