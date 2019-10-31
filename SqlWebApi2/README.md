@@ -12,6 +12,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 ## DbContextten Veritabanı oluşturma : 
 
 dotnet ef migrations add ilkOlusturma
+
 dotnet database update
 
 ## Controllar hazırlandıktan sonra curl ile test etme
