@@ -1,11 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.EntityFrameworkCore;
-using Personnel.DAL;
-using Personnel.Domains;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Personnel.DAL;
 
 namespace Personnel.Console.UI
 {

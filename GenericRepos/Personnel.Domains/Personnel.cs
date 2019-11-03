@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-namespace Personnel.Domains
+﻿namespace Personnel.Domains
 {
     public class Personnel:BaseEntity
     {
