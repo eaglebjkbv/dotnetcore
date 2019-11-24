@@ -8,8 +8,8 @@ namespace AsyncAwait4
         static async Task Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            await BekleAsync();
-            System.Console.WriteLine("Bitti");
+            string Mesaj=await BekleAsync();
+            System.Console.WriteLine($"Bitti {Mesaj}");
 
 
         }
@@ -17,7 +17,7 @@ namespace AsyncAwait4
         static Task<string> BekleAsync(){
             return Task.Run(()=>{
                System.Threading.Thread.Sleep(1500);
-                return "bitti";
+                return "Arkadaş...";
             });
         }
     }
