@@ -21,8 +21,19 @@ namespace SqlWebApi2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<BlogDbContext>(opt=>opt.UseSqlite(Configuration.GetConnectionString("BlogDbContext")));
-            
+            services.AddCors(options =>
+    {
+        options.AddPolicy("MyAllowedOrigin",
+        builder =>
+        {
+            builder
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
+    });
+            services.AddDbContext<BlogDbContext>(opt => opt.UseSqlite(Configuration.GetConnectionString("BlogDbContext")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,10 +43,11 @@ namespace SqlWebApi2
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("MyAllowedOrigin");
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
 
             app.UseAuthorization();
 

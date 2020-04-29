@@ -16,16 +16,20 @@ namespace SqlWebApi2.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<Blog>> GetBlogs(){
+
+        public async Task<ActionResult<Blog>> GetBlogs()
+        {
             return Ok(await _context.Blogs.ToListAsync());
-        } 
+        }
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<Blog>> GetBlog(int id){
+        public async Task<ActionResult<Blog>> GetBlog(int id)
+        {
             return Ok(await _context.Blogs.FindAsync(id));
-        } 
+        }
 
 
         [HttpPost]
+
         public async Task<ActionResult<Blog>> PostTodoItem(Blog blog)
 
         {
