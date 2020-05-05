@@ -1,4 +1,4 @@
-#ASP.Net core dotnet cli kullanark projeye TypeScript ekleme 
+# ASP.Net core dotnet cli kullanark projeye TypeScript ekleme 
 
 Bu programın açıklaması aşağıdaki blogdadır.
 
