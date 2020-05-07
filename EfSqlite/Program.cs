@@ -1,6 +1,5 @@
 ﻿
 using System;
-using System.Linq;
 
 namespace EfSqlite
 {
@@ -11,7 +10,7 @@ namespace EfSqlite
             using(var db=new TodoContext()){
 
             
-            db.Add(new Todo{todo="Gezilecek",isCompleted=false});
+            db.Add(new Todo{todo="Ders Çalışılacak",isCompleted=false});
             db.SaveChanges();
 
             Console.WriteLine("Todo Listesi");
